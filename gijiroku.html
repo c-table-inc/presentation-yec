@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>設計レビュー議事録</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">設計レビュー議事録</h1>
+</header>
+<h1 id="設計レビュー議事録">設計レビュー議事録</h1>
+<h2 id="会議情報">会議情報</h2>
+<p><strong>プロジェクト名</strong>:
+YK-TW次期モデル（YK-TW-NEO）開発プロジェクト <strong>会議名</strong>:
+詳細設計レビュー（DR2） <strong>日時</strong>:
+2025年11月1日（金）13:00-16:30 <strong>場所</strong>: 本社 第2会議室 +
+オンライン併用 <strong>議長</strong>: 開発部 部長 山本一郎</p>
+<p><strong>参加者</strong>: - 開発部:
+山本一郎（部長）、佐藤健太（設計担当）、鈴木花子（制御担当） - 製造部:
+田中太郎（製造技術担当）、高橋次郎（品質保証担当） - 営業部:
+伊藤美咲（技術営業担当） - 調達部: 渡辺誠（調達担当）</p>
+<hr />
+<h2 id="議題">1. 議題</h2>
+<h3 id="全体概要">1.1 全体概要</h3>
+<p>YK-TW-NEO（次期スカラロボット）の詳細設計内容について、以下の観点からレビューを実施する。</p>
+<ol type="1">
+<li>機械設計（構造、精度、材料）</li>
+<li>電気設計（制御基板、配線、センサー）</li>
+<li>制御ソフトウェア（動作制御、安全機能）</li>
+<li>製造性・組立性</li>
+<li>品質保証計画</li>
+</ol>
+<h3 id="設計目標再確認">1.2 設計目標（再確認）</h3>
+<ul>
+<li>繰り返し精度: ±0.005mm（従来モデル±0.01mmから向上）</li>
+<li>可搬重量: 5kg（従来3kgから向上）</li>
+<li>サイクルタイム: 0.35秒（従来0.45秒から短縮）</li>
+<li>温度補正機能: 標準搭載</li>
+<li>PLC連携: Ethernet/IP、CC-Link、EtherCAT対応</li>
+</ul>
+<hr />
+<h2 id="討議内容">2. 討議内容</h2>
+<h3 id="機械設計に関する質疑">2.1 機械設計に関する質疑</h3>
+<p><strong>【質問1】繰り返し精度±0.005mmの達成根拠について</strong></p>
+<p><strong>伊藤（営業）</strong>:
+顧客から±0.005mmの精度が本当に実現可能か懸念の声が上がっています。設計上の根拠を教えてください。</p>
+<p><strong>佐藤（設計）</strong>: 以下3点の改善により達成可能です。 1.
+ボールねじの精度グレードをC3からC5に向上 2.
+アーム剛性を20%向上（炭素繊維複合材の採用） 3.
+エンコーダ分解能を17bit→20bitに向上</p>
+<p>ただし、温度変化±5℃の範囲内での精度保証となります。それ以上の温度変化がある環境では、温度補正機能の使用が必須です。</p>
+<p><strong>高橋（品質）</strong>:
+温度補正機能なしで±5℃の温度変化に対応できるというのは、どのような試験で確認しましたか？</p>
+<p><strong>佐藤（設計）</strong>:
+現時点ではシミュレーションのみです。実機での温度サイクル試験は試作機完成後に実施予定です。</p>
+<p><strong>山本（議長）</strong>:
+温度サイクル試験の計画を明確にしてください。試作機完成後すぐに実施し、結果を次回レビューで報告してください。</p>
+<p><strong>→ アクション</strong>:
+佐藤（設計）、温度サイクル試験計画を作成（期限: 11/15）</p>
+<hr />
+<p><strong>【質問2】可搬重量5kgへの増加に伴う安全性について</strong></p>
+<p><strong>田中（製造）</strong>:
+可搬重量が3kgから5kgに増加していますが、モーター容量やブレーキ容量は十分でしょうか？特に緊急停止時の制動距離が気になります。</p>
+<p><strong>佐藤（設計）</strong>:
+モーター容量は1.5倍に、ブレーキ容量は2倍に増強しています。制動距離は最大負荷時でも50mm以内に収まる計算です。</p>
+<p><strong>高橋（品質）</strong>: ISO
+10218-1の安全規格では、協働運転モードでの最大速度制限がありますが、5kg負荷時の最高速度は規格内に収まっていますか？</p>
+<p><strong>鈴木（制御）</strong>:
+現在の設計では、協働モードでは速度を250mm/sに制限する予定です。これは規格値の300mm/s以内なので問題ありません。ただし、力覚センサーの応答速度については再確認が必要です。</p>
+<p><strong>山本（議長）</strong>:
+力覚センサーの応答速度を確認し、安全規格への適合性を文書化してください。</p>
+<p><strong>→ アクション</strong>:
+鈴木（制御）、力覚センサー応答速度の確認と安全規格適合性の文書化（期限:
+11/20）</p>
+<hr />
+<p><strong>【質問3】炭素繊維複合材の採用について</strong></p>
+<p><strong>渡辺（調達）</strong>:
+アーム材料に炭素繊維複合材を採用するとのことですが、サプライヤーは確定していますか？また、コストへの影響はどの程度でしょうか？</p>
+<p><strong>佐藤（設計）</strong>:
+サプライヤーは国内2社、海外1社を候補としています。まだ正式決定はしていません。コストは従来のアルミ合金と比較して約30%増加する見込みです。</p>
+<p><strong>山本（議長）</strong>:
+30%のコスト増は大きいですね。営業部門として販売価格への影響はどう考えていますか？</p>
+<p><strong>伊藤（営業）</strong>:
+高精度モデルとして、従来モデル＋20%程度の価格設定を想定しています。材料コスト30%増は利益率を圧迫するため、他の部分でコストダウンを検討する必要があります。</p>
+<p><strong>→ アクション</strong>:
+佐藤（設計）、炭素繊維複合材サプライヤーの選定と価格交渉（期限: 11/30）
+<strong>→ アクション</strong>: 佐藤（設計）、コストダウン案の検討（目標:
+5%削減、期限: 12/10）</p>
+<hr />
+<h3 id="電気設計に関する質疑">2.2 電気設計に関する質疑</h3>
+<p><strong>【質問4】EtherCAT対応について</strong></p>
+<p><strong>伊藤（営業）</strong>:
+欧州の顧客から、EtherCAT対応の要望が強く出ています。今回のモデルで対応可能でしょうか？</p>
+<p><strong>鈴木（制御）</strong>:
+ハードウェアとしては、制御基板にEtherCAT通信チップを実装済みです。ただし、ソフトウェア側のプロトコルスタック実装がまだ完了していません。</p>
+<p><strong>山本（議長）</strong>:
+ソフトウェアの実装スケジュールはどうなっていますか？</p>
+<p><strong>鈴木（制御）</strong>:
+当初計画では量産開始後の対応予定でしたが、前倒しで対応したいと思います。ただし、開発リソースが不足しているため、外部委託も検討したいです。</p>
+<p><strong>→ アクション</strong>:
+鈴木（制御）、EtherCAT実装スケジュールの見直しと外部委託の検討（期限:
+11/15）</p>
+<hr />
+<p><strong>【質問5】ケーブル配線の取り回しについて</strong></p>
+<p><strong>田中（製造）</strong>:
+試作図面を見ましたが、制御基板へのケーブル配線がかなり密集しています。組立時に作業性が悪くなる懸念があります。</p>
+<p><strong>佐藤（設計）</strong>:
+ご指摘の通り、現設計ではケーブルが密集しています。コネクタの配置を見直して、配線の取り回しを改善します。</p>
+<p><strong>田中（製造）</strong>:
+また、ケーブルの固定方法も検討してください。振動試験で断線リスクがないか心配です。</p>
+<p><strong>→ アクション</strong>:
+佐藤（設計）、ケーブル配線レイアウトの見直し（期限: 11/25） <strong>→
+アクション</strong>: 高橋（品質）、振動試験での断線リスク評価（期限:
+試作機完成後）</p>
+<hr />
+<h3 id="制御ソフトウェアに関する質疑">2.3
+制御ソフトウェアに関する質疑</h3>
+<p><strong>【質問6】温度補正アルゴリズムについて</strong></p>
+<p><strong>高橋（品質）</strong>:
+温度補正機能のアルゴリズムについて詳しく教えてください。どのような方式を採用していますか？</p>
+<p><strong>鈴木（制御）</strong>:
+温度センサーを5箇所（モーター×4、ベース×1）に配置し、各部の温度変化に応じてリアルタイムで補正値を計算します。補正アルゴリズムは線形補間方式です。</p>
+<p><strong>高橋（品質）</strong>:
+線形補間で十分な精度が得られるのでしょうか？非線形な温度特性を持つ部品もあると思いますが。</p>
+<p><strong>鈴木（制御）</strong>:
+ご指摘の通りです。今後、実機データを取得して、必要に応じて非線形補間やテーブル補正方式への変更を検討します。</p>
+<p><strong>→ アクション</strong>:
+鈴木（制御）、温度補正アルゴリズムの精度検証（期限: 試作機完成後）</p>
+<hr />
+<p><strong>【質問7】安全機能の冗長性について</strong></p>
+<p><strong>高橋（品質）</strong>:
+協働ロボットとして使用する場合、安全機能の冗長性が重要です。現在の設計ではどのような冗長構成になっていますか？</p>
+<p><strong>鈴木（制御）</strong>:
+力覚センサーと速度監視の2系統で安全を確保しています。力覚センサーが異常値を検出した場合、または速度が設定値を超えた場合、即座に停止します。</p>
+<p><strong>高橋（品質）</strong>:
+両方のセンサーが同時に故障した場合のフェールセーフ機構はありますか？</p>
+<p><strong>鈴木（制御）</strong>:
+現在の設計では、センサー自己診断機能を持っていますが、同時故障のケースは想定していませんでした。再検討します。</p>
+<p><strong>→ アクション</strong>:
+鈴木（制御）、安全機能の冗長性設計の見直し（期限: 11/30）</p>
+<hr />
+<h3 id="製造性組立性に関する質疑">2.4 製造性・組立性に関する質疑</h3>
+<p><strong>【質問8】組立工数について</strong></p>
+<p><strong>田中（製造）</strong>:
+今回の新設計により、組立工数はどの程度変化する見込みですか？</p>
+<p><strong>佐藤（設計）</strong>:
+部品点数は従来モデルから15%削減しています。組立工数も同程度削減できる見込みです。</p>
+<p><strong>田中（製造）</strong>:
+部品点数削減は良いですが、炭素繊維複合材の取り扱いには特別な注意が必要です。作業者への教育計画も必要です。</p>
+<p><strong>→ アクション</strong>:
+田中（製造）、炭素繊維複合材の取り扱いに関する作業手順書作成（期限:
+12/15）</p>
+<hr />
+<p><strong>【質問9】調整作業について</strong></p>
+<p><strong>高橋（品質）</strong>:
+繰り返し精度±0.005mmを達成するためには、組立後の調整作業が重要だと思います。調整手順は確立されていますか？</p>
+<p><strong>佐藤（設計）</strong>:
+基本的な調整手順は確立していますが、具体的な調整基準値はまだ確定していません。試作機での検証が必要です。</p>
+<p><strong>田中（製造）</strong>:
+調整作業に高度なスキルが必要だと、量産時に品質ばらつきが出る可能性があります。できるだけ自動調整化を検討してください。</p>
+<p><strong>→ アクション</strong>:
+佐藤（設計）、組立調整手順書の作成（期限: 試作機完成後） <strong>→
+アクション</strong>: 佐藤（設計）、自動調整機構の検討（期限: 12/20）</p>
+<hr />
+<h3 id="品質保証計画に関する質疑">2.5 品質保証計画に関する質疑</h3>
+<p><strong>【質問10】信頼性試験計画について</strong></p>
+<p><strong>高橋（品質）</strong>:
+信頼性試験の計画を教えてください。特に、MTBF（平均故障間隔）の目標値はありますか？</p>
+<p><strong>佐藤（設計）</strong>:
+MTBF目標は50,000時間です。信頼性試験は、温度サイクル試験、振動試験、耐久試験を実施予定です。</p>
+<p><strong>高橋（品質）</strong>:
+耐久試験のサイクル数は何回を予定していますか？</p>
+<p><strong>佐藤（設計）</strong>:
+100万サイクルを予定しています。これは実稼働5年分に相当します。</p>
+<p><strong>高橋（品質）</strong>:
+試験スケジュールを確認させてください。量産開始前に完了させる必要があります。</p>
+<p><strong>→ アクション</strong>:
+佐藤（設計）、信頼性試験スケジュールの作成（期限: 11/10）</p>
+<hr />
+<h2 id="決定事項">3. 決定事項</h2>
+<h3 id="設計変更">3.1 設計変更</h3>
+<ol type="1">
+<li><strong>承認</strong>:
+炭素繊維複合材の採用（コストダウン案の提示を条件）</li>
+<li><strong>承認</strong>:
+繰り返し精度±0.005mmの仕様（温度補正機能必須を明記）</li>
+<li><strong>承認</strong>:
+EtherCAT対応（実装スケジュールの見直しを条件）</li>
+</ol>
+<h3 id="次回レビュー">3.2 次回レビュー</h3>
+<ul>
+<li>日時: 2025年12月10日（火）13:00-16:00</li>
+<li>議題: 試作機評価結果レビュー（DR3）</li>
+</ul>
+<hr />
+<h2 id="アクションアイテム一覧">4. アクションアイテム一覧</h2>
+<h3 id="設計部担当-佐藤健太">設計部（担当: 佐藤健太）</h3>
+<ol type="1">
+<li><strong>[期限: 11/10]</strong> 信頼性試験スケジュールの作成</li>
+<li><strong>[期限: 11/15]</strong> 温度サイクル試験計画の作成</li>
+<li><strong>[期限: 11/25]</strong> ケーブル配線レイアウトの見直し</li>
+<li><strong>[期限: 11/30]</strong>
+炭素繊維複合材サプライヤーの選定と価格交渉</li>
+<li><strong>[期限: 12/10]</strong> コストダウン案の検討（目標:
+5%削減）</li>
+<li><strong>[期限: 12/20]</strong> 自動調整機構の検討</li>
+<li><strong>[期限: 試作機完成後]</strong> 組立調整手順書の作成</li>
+</ol>
+<h3 id="制御部担当-鈴木花子">制御部（担当: 鈴木花子）</h3>
+<ol type="1">
+<li><strong>[期限: 11/15]</strong>
+EtherCAT実装スケジュールの見直しと外部委託の検討</li>
+<li><strong>[期限: 11/20]</strong>
+力覚センサー応答速度の確認と安全規格適合性の文書化</li>
+<li><strong>[期限: 11/30]</strong> 安全機能の冗長性設計の見直し</li>
+<li><strong>[期限: 試作機完成後]</strong>
+温度補正アルゴリズムの精度検証</li>
+</ol>
+<h3 id="製造部担当-田中太郎">製造部（担当: 田中太郎）</h3>
+<ol type="1">
+<li><strong>[期限: 12/15]</strong>
+炭素繊維複合材の取り扱いに関する作業手順書作成</li>
+</ol>
+<h3 id="品質保証部担当-高橋次郎">品質保証部（担当: 高橋次郎）</h3>
+<ol type="1">
+<li><strong>[期限: 試作機完成後]</strong>
+振動試験での断線リスク評価</li>
+</ol>
+<hr />
+<h2 id="次回までの宿題">5. 次回までの宿題</h2>
+<h3 id="全体">全体</h3>
+<ul>
+<li>試作機の製作スケジュール確認（試作機完成目標: 12月初旬）</li>
+<li>コスト削減案の具体化</li>
+<li>安全規格への適合性の再確認</li>
+</ul>
+<hr />
+<p><strong>議事録作成</strong>: 佐藤健太 <strong>承認</strong>: 山本一郎
+<strong>配布</strong>: 全参加者 + プロジェクトメンバー</p>
+<hr />
+<p><strong>【機密区分】</strong>: 社外秘 <strong>【保管期限】</strong>:
+プロジェクト終了後5年</p>
+</body>
+</html>

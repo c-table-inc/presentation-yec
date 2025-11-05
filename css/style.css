@@ -1,0 +1,579 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Atlassian Design Colors */
+    --primary-color: #0052CC;
+    --secondary-color: #36B37E;
+    --accent-color: #FF5630;
+    --text-color: #172B4D;
+    --text-secondary: #6B778C;
+    --light-bg: #F4F5F7;
+    --white: #FFFFFF;
+    --gray: #97A0AF;
+    --success: #36B37E;
+    --warning: #FFAB00;
+    --error: #DE350B;
+    --neutral: #DFE1E6;
+    --brand: #0052CC;
+    --elevation-shadow: 0 2px 6px rgba(3, 102, 214, 0.15);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background: var(--light-bg);
+    overflow: hidden;
+    height: 100vh;
+    font-weight: 400;
+}
+
+.presentation-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: var(--white);
+    padding: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.slide.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* タイトルスライド */
+.title-slide {
+    text-align: center;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--text-color);
+}
+
+.title-slide h1 {
+    font-size: 3.2em;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.title-slide .subtitle {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.title-slide .divider {
+    width: 120px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 40px auto;
+    border-radius: 2px;
+}
+
+.title-slide .date {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+/* 通常スライド - Atlassian Typography (Large Sizes) */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 32px;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin: 24px 0 16px 0;
+    color: var(--text-color);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin: 20px 0 12px 0;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* テキスト - Atlassian Typography (Large Sizes) */
+p {
+    font-size: 1.25rem;
+    margin: 16px 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+ul, ol {
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* コードブロック - Atlassian Design (Extra Large Sizes) */
+.code-container {
+    position: relative;
+    margin: 24px 0;
+}
+
+pre {
+    background: #F4F5F7;
+    border: 1px solid var(--neutral);
+    border-radius: 6px;
+    padding: 24px;
+    margin: 0;
+    overflow-x: auto;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    box-shadow: var(--elevation-shadow);
+}
+
+.copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: var(--white);
+    border: 1px solid var(--neutral);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--elevation-shadow);
+}
+
+.copy-button:hover {
+    background: var(--light-bg);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.copy-button.copied {
+    background: var(--success);
+    border-color: var(--success);
+    color: var(--white);
+}
+
+code {
+    font-family: 'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+    color: var(--text-color);
+    background: #F4F5F7;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 1.125rem;
+}
+
+/* 強調 - Atlassian Design */
+.highlight {
+    background: rgba(0, 82, 204, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.highlight-box {
+    background: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+/* カード - Atlassian Design */
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 24px 0;
+    box-shadow: var(--elevation-shadow);
+    border: 1px solid var(--neutral);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.25);
+    transform: translateY(-2px);
+}
+
+.card.success {
+    border-left: 4px solid var(--success);
+    background: linear-gradient(90deg, rgba(54, 179, 126, 0.05), var(--white));
+}
+
+.card.warning {
+    border-left: 4px solid var(--warning);
+    background: linear-gradient(90deg, rgba(255, 171, 0, 0.05), var(--white));
+}
+
+.card.error {
+    border-left: 4px solid var(--error);
+    background: linear-gradient(90deg, rgba(222, 53, 11, 0.05), var(--white));
+}
+
+/* 比較レイアウト */
+.comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.comparison-item {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.before {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    color: var(--white);
+}
+
+.after {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: var(--primary-color);
+}
+
+/* Result boxes for prompt examples */
+.result-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.result-box.error {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: var(--white);
+}
+
+.result-box.success {
+    background: rgba(54, 179, 126, 0.1);
+    border: 2px solid var(--success);
+    color: var(--text-color);
+}
+
+.before h3, .after h3 {
+    margin-top: 0;
+}
+
+/* プロンプト例と出力例のスタイル */
+.prompt-example, .output-example {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+}
+
+.prompt-example h3, .output-example h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.prompt-example pre, .output-example pre {
+    background: var(--white);
+    border: 2px solid var(--neutral);
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* 画像 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+    border: 3px solid var(--light-bg);
+}
+
+.image-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.image-caption {
+    font-size: 1.1em;
+    color: var(--gray);
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* ナビゲーション（非表示） */
+.nav-controls {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 1001;
+    background: var(--white);
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nav-btn {
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #0747A6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 82, 204, 0.3);
+}
+
+.nav-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.nav-btn:disabled {
+    background: var(--gray);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.slide-counter {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+/* プログレスバー - Atlassian Design */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--neutral);
+    z-index: 1000;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+    border-radius: 0 2px 2px 0;
+}
+
+/* スライド番号 - Atlassian Design */
+.slide-number {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: var(--white);
+    padding: 8px 16px;
+    border-radius: 6px;
+    box-shadow: var(--elevation-shadow);
+    font-weight: 500;
+    color: var(--text-secondary);
+    z-index: 1000;
+    font-size: 0.875rem;
+    border: 1px solid var(--neutral);
+}
+
+/* PC専用設計のためレスポンシブコードを削除 */
+
+/* 特殊要素 */
+.step-number {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 12px;
+    font-size: 0.875rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.feature-item {
+    background: var(--white);
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+    border: 1px solid var(--neutral);
+    box-shadow: var(--elevation-shadow);
+}
+
+.feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(3, 102, 214, 0.25);
+}
+
+.feature-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 82, 204, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.summary-box {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.summary-box h2 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.url-link {
+    font-size: 1.1em;
+    color: var(--secondary-color);
+    text-decoration: underline;
+    margin: 20px 0;
+    display: block;
+}
+
+/* リンクをクリック可能にする */
+a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+}
+
+/* iframeコンテナ */
+.iframe-container {
+    width: 100%;
+    height: calc(100vh - 250px);
+    border: 2px solid var(--neutral);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--elevation-shadow);
+    background: var(--white);
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ダウンロードボタン */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--elevation-shadow);
+}
+
+.download-btn:hover {
+    background: #2a9566;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 179, 126, 0.3);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.download-btn i {
+    font-size: 1.1em;
+}
