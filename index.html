@@ -14,7 +14,7 @@
     </div>
 
     <!-- スライド番号 -->
-    <div class="slide-number" id="slideNumber">1 / 32</div>
+    <div class="slide-number" id="slideNumber">1 / 31</div>
 
     <!-- プレゼンテーションコンテナ -->
     <div class="presentation-container">
@@ -304,15 +304,27 @@ Markdown（「教師」「生徒」形式の対話）
 
             <div class="prompt-example">
                 <h3><i class="fas fa-pen"></i> プロンプト例</h3>
-                <pre><code>ヤマハモーター製の産業用ロボットの特徴を3つ紹介してください。
-以下の形式でMarkdown形式で出力してください：
+                <pre><code>あなたは産業用ロボットの技術営業担当者です。
+
+以下の条件で出力してください。
+
+## 条件
+- 目的: 顧客にヤマハモーター製ロボットの特徴を分かりやすく紹介する
+- 制約: 3製品を紹介、各製品の概要は50文字程度
+- 文体: 専門的でありながら分かりやすく
+
+## 出力形式
+Markdown形式で以下の構造：
 
 ## 製品名
 **概要**: 50文字程度で製品の特徴を説明
 ### 主要スペック・特長
 - 特長1
 - 特長2
-- 特長3</code></pre>
+- 特長3
+
+## 入力
+ヤマハモーター製の産業用ロボットの特徴を3つ紹介してください。</code></pre>
             </div>
 
             <div class="highlight-box">
@@ -517,21 +529,7 @@ Markdown（「教師」「生徒」形式の対話）
             </div>
         </div>
 
-        <!-- スライド17: 設計レビュー議事録 -->
-        <div class="slide">
-            <h1>設計レビュー議事録 - YKシリーズ次期モデル</h1>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <p style="font-size: 1.2em; color: var(--text-secondary);">プロジェクトの設計レビュー会議の議事録</p>
-                <a href="設計レビュー議事録_YKシリーズ次期モデル.docx" download class="download-btn">
-                    <i class="fas fa-download"></i> Word版をダウンロード
-                </a>
-            </div>
-            <div class="iframe-container">
-                <iframe src="gijiroku.html" frameborder="0"></iframe>
-            </div>
-        </div>
-
-        <!-- スライド18: シンプルプロンプトの例 -->
+        <!-- スライド17: シンプルプロンプトの例 -->
         <div class="slide">
             <h1>シンプルプロンプトの例</h1>
             <pre><code>このメールの返信を作成してください。
@@ -551,7 +549,7 @@ YK-TWシリーズで対応可能でしょうか。
 製造部 田中太郎</code></pre>
         </div>
 
-        <!-- スライド19: シンプルプロンプトの出力例 -->
+        <!-- スライド18: シンプルプロンプトの出力例 -->
         <div class="slide">
             <h1>シンプルプロンプトの出力例</h1>
             <pre><code>株式会社ABC製作所
@@ -587,7 +585,7 @@ PLCに対応しております。Ethernet/IP、CC-Link、DeviceNetなどの
 メール：support@example.com</code></pre>
         </div>
 
-        <!-- スライド20: 構造化プロンプトの例 -->
+        <!-- スライド19: 構造化プロンプトの例 -->
         <div class="slide">
             <h1>構造化プロンプトの例</h1>
             <pre><code>あなたは製造業の技術サポートエンジニアです。
@@ -622,7 +620,7 @@ YK-TWシリーズで対応可能でしょうか。
 件名と本文を含む返信メールを作成してください。</code></pre>
         </div>
 
-        <!-- スライド21: 構造化プロンプトの出力例 -->
+        <!-- スライド20: 構造化プロンプトの出力例 -->
         <div class="slide">
             <h1>構造化プロンプトの出力例</h1>
             <pre><code>件名：YK-TWシリーズの仕様とPLC連携について
@@ -668,7 +666,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 </code></pre>
         </div>
 
-        <!-- スライド22: ファイルアップロードを利用した実践事例 -->
+        <!-- スライド21: ファイルアップロードを利用した実践事例 -->
         <div class="slide">
             <h1>ファイルアップロードを利用した実践事例</h1>
             <h2><i class="fas fa-upload"></i> 技術文書・議事録の活用で業務効率を飛躍的に向上</h2>
@@ -705,7 +703,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド23: 設計レビュー議事録から技術FAQを作成 -->
+        <!-- スライド22: 設計レビュー議事録から技術FAQを作成 -->
         <div class="slide">
             <h1>設計レビュー議事録 - YKシリーズ次期モデル</h1>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -719,7 +717,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド24: プロンプト例（議事録FAQ） -->
+        <!-- スライド23: プロンプト例（議事録FAQ） -->
         <div class="slide">
             <h1>プロンプト例</h1>
             <pre><code>あなたは製造業の技術ドキュメント作成担当です。
@@ -743,7 +741,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 技術FAQを作成してください。</code></pre>
         </div>
 
-        <!-- スライド25: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
+        <!-- スライド24: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
         <div class="slide">
             <h1>ChatGPTに議事録ファイルをアップロードして、出力した例</h1>
             <div class="image-container">
@@ -751,14 +749,14 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド26: プロジェクト会議議事録から部門別アクションアイテムを作成 -->
+        <!-- スライド25: プロジェクト会議議事録から部門別アクションアイテムを作成 -->
         <div class="slide">
             <h1>プロジェクト会議議事録から部門別アクションアイテムを作成</h1>
             <h2>プロジェクト定例会議の議事録</h2>
             <p style="font-size: 1.1em; margin: 20px 0;">会議で決まったアクションアイテムを部門別・担当者別に整理し、<br>タスク管理の抜け漏れを防ぎます。</p>
         </div>
 
-        <!-- スライド27: 議事録TODO抽出プロンプト -->
+        <!-- スライド26: 議事録TODO抽出プロンプト -->
         <div class="slide">
             <h1>議事録TODO抽出プロンプト</h1>
             <pre style="font-size: 0.85em;"><code>あなたはプロジェクトマネージャーのアシスタントです。
@@ -803,7 +801,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 部門別・担当者別アクションアイテムリスト</code></pre>
         </div>
 
-        <!-- スライド28: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
+        <!-- スライド27: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
         <div class="slide">
             <h1>ChatGPTに議事録ファイルをアップロードして、出力した例</h1>
             <div class="image-container">
@@ -811,7 +809,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド29: レシート画像から、経費内訳作成 -->
+        <!-- スライド28: レシート画像から、経費内訳作成 -->
         <div class="slide">
             <h1>レシート画像から、経費内訳作成</h1>
             <div class="image-container">
@@ -819,7 +817,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド30: プロンプト例（レシート） -->
+        <!-- スライド29: プロンプト例（レシート） -->
         <div class="slide">
             <h1>プロンプト例</h1>
             <pre><code>あなたは経理担当者です。  
@@ -850,7 +848,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 | 合計金額   |            | |              | 4000円 |</code></pre>
         </div>
 
-        <!-- スライド31: 出力例 -->
+        <!-- スライド30: 出力例 -->
         <div class="slide">
             <h1>出力例</h1>
             <div class="image-container">
@@ -858,7 +856,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド32: ChatGPT Thinking modeの活用 -->
+        <!-- スライド31: ChatGPT Thinking modeの活用 -->
         <div class="slide">
             <h1>ChatGPT Thinking modeの活用</h1>
             <h2><i class="fas fa-brain"></i> より深い分析と精度の高い回答を得る方法</h2>
@@ -925,7 +923,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             <i class="fas fa-chevron-left"></i>
             前へ
         </button>
-        <div class="slide-counter" id="slideCounter">1 / 32</div>
+        <div class="slide-counter" id="slideCounter">1 / 31</div>
         <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">
             次へ
             <i class="fas fa-chevron-right"></i>
