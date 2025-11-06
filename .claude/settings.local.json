@@ -5,7 +5,9 @@
       "Bash(pandoc:*)",
       "Bash(brew install:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebSearch",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

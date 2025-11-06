@@ -14,7 +14,7 @@
     </div>
 
     <!-- スライド番号 -->
-    <div class="slide-number" id="slideNumber">1 / 31</div>
+    <div class="slide-number" id="slideNumber">1 / 32</div>
 
     <!-- プレゼンテーションコンテナ -->
     <div class="presentation-container">
@@ -82,7 +82,7 @@
             </div>
         </div>
 
-        <!-- スライド3: エンジニアリング業務における課題と解決 -->
+        <!-- スライド4: エンジニアリング業務における課題と解決 -->
         <div class="slide">
             <h1>エンジニアリング業務における課題と解決</h1>
             <div class="comparison">
@@ -107,32 +107,60 @@
             </div>
         </div>
 
-        <!-- スライド4: 効果的なプロンプトの5要素 -->
+        <!-- スライド5: 効果的なプロンプトの3要素 -->
         <div class="slide">
-            <h1>効果的なプロンプトの5要素</h1>
-            <pre><code>あなたは[役割・専門家]です。 ← <span class="highlight">要素1: 役割設定</span>
-私は[依頼者の立場や目的]です。 ← <span class="highlight">要素2: 文脈設定</span>
-以下の条件を守って出力してください。
+            <h1>効果的なプロンプトの3要素</h1>
+            <pre><code>あなたは[役割・専門家]です。 ← <span class="highlight">要素1: 役割指定</span>
 
-## 出力条件
-1. 目的： [最終的に達成したいことを明記] ← <span class="highlight">要素3: 目的</span>
-2. 形式： [箇条書き / 表形式 / 文章形式など] ← <span class="highlight">要素4: 形式</span>
-3. 文体： [簡潔でわかりやすい / 専門的で正確など] ← <span class="highlight">要素5: 文体</span>
-4. 制約： [字数制限 / 難しい用語には注釈を入れるなど]
-5. 出力の質： 
-   - 論理的で一貫性があること
-   - 冗長さを避け、要点を押さえること
-   - 必要なら例や比喩を入れてわかりやすくする</code></pre>
+以下の条件で出力してください。
+
+## 条件 ← <span class="highlight">要素2: 条件設定</span>
+- 目的: [最終的に達成したいこと]
+- 制約: [字数制限、注意事項など]
+- 文体: [簡潔でわかりやすい / 専門的で正確など]
+
+## 出力形式 ← <span class="highlight">要素3: 出力形式指定</span>
+[Markdown / 箇条書き / 表形式など]
+
+## 入力
+[ここに依頼内容を記載]</code></pre>
         </div>
 
-        <!-- スライド5: フレームワークのメリット -->
+        <!-- スライド6: プロンプト例（3要素の実践） -->
+        <div class="slide">
+            <h1>プロンプト例（3要素の実践）</h1>
+            <h2><i class="fas fa-lightbulb"></i> 前ページのプロンプトの3要素を使った例</h2>
+
+            <pre><code>あなたは英語教師です。 ← <span class="highlight">要素1: 役割指定</span>
+
+以下の条件で出力してください。
+
+## 条件 ← <span class="highlight">要素2: 条件設定</span>
+- 目的: 学習者が日常英会話を練習できるようにする
+- 制約: 1回の会話で5往復以内、簡単な英語
+- 文体: Friendlyでわかりやすく
+
+## 出力形式 ← <span class="highlight">要素3: 出力形式指定</span>
+Markdown（「教師」「生徒」形式の対話）
+
+## 入力
+テーマ: レストランで注文する会話</code></pre>
+
+            <div class="highlight-box" style="margin-top: 30px;">
+                <h3><i class="fas fa-check-circle"></i> ポイント</h3>
+                <p>3要素を明確に指定することで、<strong>AIが期待通りの形式で会話練習を生成</strong>します。<br>
+                このテンプレートは様々な場面に応用可能です。</p>
+            </div>
+        </div>
+
+        <!-- スライド7: フレームワークのメリット -->
         <div class="slide">
             <h1>このフレームワークのメリット</h1>
             <div class="feature-grid">
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
-                    <h3>再現性が高い</h3>
-                    <p>誰でも同じ品質の出力を得られる</p>
+                    <div class="feature-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>学習コストが低い</h3>
+                    <p>3要素だけで覚えられる</p>
                 </div>
                 <div class="feature-item">
                     <div class="feature-icon"><i class="fas fa-cog"></i></div>
@@ -140,43 +168,41 @@
                     <p>業務に応じて条件を調整可能</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3>品質管理が可能</h3>
-                    <p>出力条件で品質基準を明確化</p>
+                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>最新トレンドに準拠</h3>
+                    <p>2025年のAIベストプラクティス</p>
                 </div>
             </div>
             <div class="summary-box">
                 <h2><i class="fas fa-lightbulb"></i> 重要ポイント</h2>
-                <p>このフレームワークにより、AIを使った業務効率化を<br>
-                <strong>体系的・継続的・高品質</strong>に実現できます</p>
+                <p>シンプルながら効果的なこのフレームワークにより、<br>
+                <strong>初学者でも即座に高品質なAI活用</strong>を実現できます</p>
             </div>
         </div>
 
-        <!-- スライド22: 基本プロンプト -->
+        <!-- スライド8: 基本プロンプト -->
         <div class="slide">
             <h1>基本プロンプト</h1>
-            <pre><code>あなたは[役割・専門家]です。  
-私は[依頼者の立場や目的]です。  
-以下の条件を守って出力してください。
+            <pre><code>あなたは[役割・専門家]です。
 
-## 出力条件
-1. 目的： [最終的に達成したいことを明記]  
-2. 形式： [例：箇条書き / 表形式 / 文章形式 / Markdown形式など]  
-3. 文体： [例：簡潔でわかりやすい / 専門的で正確 / 丁寧で親しみやすい]  
-4. 制約： [字数制限 / 難しい用語には注釈を入れる / 根拠を提示する など]  
-5. 出力の質： 
-   - 論理的で一貫性があること  
-   - 冗長さを避け、要点を押さえること  
-   - 必要なら例や比喩を入れてわかりやすくする  
+以下の条件で出力してください。
+
+## 条件
+- 目的: [最終的に達成したいこと]
+- 制約: [字数制限、注意事項など]
+- 文体: [簡潔でわかりやすい / 専門的で正確など]
+
+## 出力形式
+[Markdown / 箇条書き / 表形式など]
 
 ## 入力
-[ここに依頼内容やデータを記載]  
+[ここに依頼内容やデータを記載]
 
 ## 出力
 [ここに「求める出力」を明示、例：レポートを作成してください]</code></pre>
         </div>
 
-        <!-- スライド8: Markdown形式とは？ -->
+        <!-- スライド9: Markdown形式とは？ -->
         <div class="slide">
             <h1>Markdown形式とは？</h1>
             <h2><i class="fas fa-code"></i> AIが理解しやすい文書構造化フォーマット</h2>
@@ -211,7 +237,7 @@
             </div>
         </div>
 
-        <!-- スライド9: Markdownの基本記法 -->
+        <!-- スライド10: Markdownの基本記法 -->
         <div class="slide">
             <h1>Markdownの基本記法</h1>
             <h2><i class="fas fa-list-ul"></i> プロンプトでよく使う記法例</h2>
@@ -271,7 +297,7 @@
             </div>
         </div>
 
-        <!-- スライド10: ChatGPTへのMarkdown指定プロンプト -->
+        <!-- スライド11: ChatGPTへのMarkdown指定プロンプト -->
         <div class="slide">
             <h1>ChatGPTへのMarkdown指定プロンプト</h1>
             <h2><i class="fas fa-terminal"></i> 構造化された出力を得るための指示方法</h2>
@@ -299,7 +325,7 @@
             </div>
         </div>
 
-        <!-- スライド11: ChatGPTのMarkdown出力例 -->
+        <!-- スライド12: ChatGPTのMarkdown出力例 -->
         <div class="slide">
             <h1>ChatGPTのMarkdown出力例</h1>
             <h2><i class="fas fa-file-alt"></i> 実際のAI出力結果</h2>
@@ -352,7 +378,7 @@
             </div>
         </div>
 
-        <!-- スライド12: 音声デモ - 技術アドバイザーAI体験 -->
+        <!-- スライド13: 音声デモ - 技術アドバイザーAI体験 -->
         <div class="slide">
             <h1>音声デモ - 技術アドバイザーAI体験</h1>
             <h2><i class="fas fa-microphone"></i> ヤマハモーター製品情報を元にした対話型デモンストレーション</h2>
@@ -423,7 +449,7 @@
             </div>
         </div>
 
-        <!-- スライド13: プロンプト自体をChatGPTに作成してもらう -->
+        <!-- スライド14: プロンプト自体をChatGPTに作成してもらう -->
         <div class="slide">
             <h1>プロンプト自体をChatGPTに作成してもらう</h1>
             <pre><code>製造業のエンジニアとして、顧客からの技術問い合わせに
@@ -434,7 +460,7 @@
 このプロンプトをもっとよくして。</code></pre>
         </div>
 
-        <!-- スライド24: 出力例 -->
+        <!-- スライド15: 出力例 -->
         <div class="slide">
             <h1>出力例</h1>
             <pre><code>あなたは製造業の技術サポートエンジニアです。
@@ -454,7 +480,7 @@
 - 本文（改行・段落あり）</code></pre>
         </div>
 
-        <!-- スライド9: メール返信文面作成の実践事例 -->
+        <!-- スライド16: メール返信文面作成の実践事例 -->
         <div class="slide">
             <h1>メール返信文面作成の実践事例</h1>
             <h2><i class="fas fa-envelope"></i> 顧客対応の品質向上と効率化を実現</h2>
@@ -491,7 +517,7 @@
             </div>
         </div>
 
-        <!-- スライド22: 設計レビュー議事録 -->
+        <!-- スライド17: 設計レビュー議事録 -->
         <div class="slide">
             <h1>設計レビュー議事録 - YKシリーズ次期モデル</h1>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -505,7 +531,7 @@
             </div>
         </div>
 
-        <!-- スライド14: シンプルプロンプトの例 -->
+        <!-- スライド18: シンプルプロンプトの例 -->
         <div class="slide">
             <h1>シンプルプロンプトの例</h1>
             <pre><code>このメールの返信を作成してください。
@@ -525,7 +551,7 @@ YK-TWシリーズで対応可能でしょうか。
 製造部 田中太郎</code></pre>
         </div>
 
-        <!-- スライド15: シンプルプロンプトの出力例 -->
+        <!-- スライド19: シンプルプロンプトの出力例 -->
         <div class="slide">
             <h1>シンプルプロンプトの出力例</h1>
             <pre><code>株式会社ABC製作所
@@ -561,7 +587,7 @@ PLCに対応しております。Ethernet/IP、CC-Link、DeviceNetなどの
 メール：support@example.com</code></pre>
         </div>
 
-        <!-- スライド16: 構造化プロンプトの例 -->
+        <!-- スライド20: 構造化プロンプトの例 -->
         <div class="slide">
             <h1>構造化プロンプトの例</h1>
             <pre><code>あなたは製造業の技術サポートエンジニアです。
@@ -596,7 +622,7 @@ YK-TWシリーズで対応可能でしょうか。
 件名と本文を含む返信メールを作成してください。</code></pre>
         </div>
 
-        <!-- スライド17: 構造化プロンプトの出力例 -->
+        <!-- スライド21: 構造化プロンプトの出力例 -->
         <div class="slide">
             <h1>構造化プロンプトの出力例</h1>
             <pre><code>件名：YK-TWシリーズの仕様とPLC連携について
@@ -642,7 +668,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 </code></pre>
         </div>
 
-        <!-- スライド15: ファイルアップロードを利用した実践事例 -->
+        <!-- スライド22: ファイルアップロードを利用した実践事例 -->
         <div class="slide">
             <h1>ファイルアップロードを利用した実践事例</h1>
             <h2><i class="fas fa-upload"></i> 技術文書・議事録の活用で業務効率を飛躍的に向上</h2>
@@ -679,7 +705,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド24: 設計レビュー議事録から技術FAQを作成 -->
+        <!-- スライド23: 設計レビュー議事録から技術FAQを作成 -->
         <div class="slide">
             <h1>設計レビュー議事録 - YKシリーズ次期モデル</h1>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -693,7 +719,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド21: プロンプト例（議事録FAQ） -->
+        <!-- スライド24: プロンプト例（議事録FAQ） -->
         <div class="slide">
             <h1>プロンプト例</h1>
             <pre><code>あなたは製造業の技術ドキュメント作成担当です。
@@ -717,7 +743,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 技術FAQを作成してください。</code></pre>
         </div>
 
-        <!-- スライド22: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
+        <!-- スライド25: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
         <div class="slide">
             <h1>ChatGPTに議事録ファイルをアップロードして、出力した例</h1>
             <div class="image-container">
@@ -725,14 +751,14 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド23: プロジェクト会議議事録から部門別アクションアイテムを作成 -->
+        <!-- スライド26: プロジェクト会議議事録から部門別アクションアイテムを作成 -->
         <div class="slide">
             <h1>プロジェクト会議議事録から部門別アクションアイテムを作成</h1>
             <h2>プロジェクト定例会議の議事録</h2>
             <p style="font-size: 1.1em; margin: 20px 0;">会議で決まったアクションアイテムを部門別・担当者別に整理し、<br>タスク管理の抜け漏れを防ぎます。</p>
         </div>
 
-        <!-- スライド24: 議事録TODO抽出プロンプト -->
+        <!-- スライド27: 議事録TODO抽出プロンプト -->
         <div class="slide">
             <h1>議事録TODO抽出プロンプト</h1>
             <pre style="font-size: 0.85em;"><code>あなたはプロジェクトマネージャーのアシスタントです。
@@ -777,7 +803,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 部門別・担当者別アクションアイテムリスト</code></pre>
         </div>
 
-        <!-- スライド21: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
+        <!-- スライド28: ChatGPTに議事録ファイルをアップロードして、出力した例 -->
         <div class="slide">
             <h1>ChatGPTに議事録ファイルをアップロードして、出力した例</h1>
             <div class="image-container">
@@ -785,7 +811,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド22: レシート画像から、経費内訳作成 -->
+        <!-- スライド29: レシート画像から、経費内訳作成 -->
         <div class="slide">
             <h1>レシート画像から、経費内訳作成</h1>
             <div class="image-container">
@@ -793,7 +819,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド23: プロンプト例（レシート） -->
+        <!-- スライド30: プロンプト例（レシート） -->
         <div class="slide">
             <h1>プロンプト例</h1>
             <pre><code>あなたは経理担当者です。  
@@ -824,7 +850,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
 | 合計金額   |            | |              | 4000円 |</code></pre>
         </div>
 
-        <!-- スライド24: 出力例 -->
+        <!-- スライド31: 出力例 -->
         <div class="slide">
             <h1>出力例</h1>
             <div class="image-container">
@@ -832,7 +858,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             </div>
         </div>
 
-        <!-- スライド30: ChatGPT Thinking modeの活用 -->
+        <!-- スライド32: ChatGPT Thinking modeの活用 -->
         <div class="slide">
             <h1>ChatGPT Thinking modeの活用</h1>
             <h2><i class="fas fa-brain"></i> より深い分析と精度の高い回答を得る方法</h2>
@@ -899,7 +925,7 @@ YK-TWシリーズは以下の主要PLCメーカーに対応しております：
             <i class="fas fa-chevron-left"></i>
             前へ
         </button>
-        <div class="slide-counter" id="slideCounter">1 / 31</div>
+        <div class="slide-counter" id="slideCounter">1 / 32</div>
         <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">
             次へ
             <i class="fas fa-chevron-right"></i>
