@@ -69,11 +69,14 @@ body {
 /* タイトルスライド */
 .title-slide {
     text-align: center;
-    display: flex !important;
     flex-direction: column;
     justify-content: center;
     background: #ffffff;
     color: var(--text-color);
+}
+
+.title-slide.active {
+    display: flex !important;
 }
 
 .title-slide h1 {
