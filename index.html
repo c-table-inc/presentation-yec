@@ -842,7 +842,99 @@ Markdown形式で以下の構造：
             </div>
         </div>
 
-        <!-- スライド24: レシート画像から、経費内訳作成 -->
+        <!-- スライド24: 事例3 - 難解な技術論文を対話形式で理解する -->
+        <div class="slide">
+            <h1>事例3: 難解な技術論文を対話形式で理解する</h1>
+
+            <div class="feature-grid" style="margin-top: 40px;">
+                <div class="card warning">
+                    <h3><i class="fas fa-exclamation-triangle"></i> 課題</h3>
+                    <ul style="text-align: left; margin-top: 15px;">
+                        <li>最新の技術論文は専門用語が多く、理解が困難</li>
+                        <li>一人で読むと疑問点が解消されず、学習効率が低い</li>
+                        <li>専門家に質問する機会が限られている</li>
+                    </ul>
+                </div>
+
+                <div class="card success">
+                    <h3><i class="fas fa-lightbulb"></i> 解決策</h3>
+                    <ul style="text-align: left; margin-top: 15px;">
+                        <li>AIに「素人と専門家の対話形式」で論文を解説させる</li>
+                        <li>素人役が自然な疑問を投げかけ、専門家役が噛み砕いて説明</li>
+                        <li>段階的に理解を深められる学習体験を提供</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px; font-size: 1.2em;">
+                <strong><i class="fas fa-graduation-cap"></i> 対象論文:</strong>
+                <br>"Learning Magnitude Distribution of Sound Fields via Conditioned Autoencoder"
+                <br><a href="https://arxiv.org/html/2506.16729v1" target="_blank" style="color: var(--primary-color); text-decoration: underline;">https://arxiv.org/html/2506.16729v1</a>
+                <br><span style="font-size: 0.9em; color: var(--text-secondary);">（音響信号処理 × ディープラーニングの最新研究）</span>
+            </div>
+        </div>
+
+        <!-- スライド25: シンプルなプロンプトでも解説可能 -->
+        <div class="slide">
+            <h1>シンプルなプロンプトでも解説可能</h1>
+
+            <div style="margin-top: 30px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">
+                    <i class="fas fa-terminal"></i> プロンプト例
+                </h3>
+                <pre style="background: #f4f5f7; padding: 20px; border-radius: 8px; font-size: 1.3em;"><code>https://arxiv.org/html/2506.16729v1
+
+これを解説して</code></pre>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 15px;">
+                    <i class="fas fa-arrow-down"></i> 出力結果
+                </h3>
+                <div class="image-container" style="max-height: 400px; overflow-y: auto; border: 2px solid var(--light-bg); border-radius: 8px;">
+                    <img src="img/simple-prompt-paper.png" alt="シンプルなプロンプトでの論文解説結果">
+                </div>
+            </div>
+        </div>
+
+        <!-- スライド26: プロンプト例（対話形式論文解説） -->
+        <div class="slide">
+            <h1>より詳細な解説を得るプロンプト例</h1>
+            <pre><code>あなたは技術論文の解説者です。
+私は新しい技術を学びたいエンジニアです。
+
+## 出力条件
+1. 目的：難解な技術論文を、素人と専門家の対話形式で分かりやすく解説し、
+   理解を促進する
+2. 形式：対話形式（素人役「質問者」と専門家役「解説者」の会話）
+3. 文体：専門用語は必ず噛み砕いて説明。比喩や具体例を多用
+4. 制約：
+   - 素人役は自然な疑問点を5〜7回投げかける
+   - 専門家役は段階的に詳しく説明する（いきなり全てを説明しない）
+   - 「つまり〜ということですか?」と素人役が理解確認する
+   - 技術的な誤りがないよう正確性を保つ
+5. 出力の質：
+   - 論文の全体像→キーとなる技術→新規性→応用可能性の順で展開
+   - 素人が「なぜそれが必要なのか?」「従来法との違いは?」と
+     疑問を持つポイントを先回りして解説
+   - 最後に3行でサマリーを提示
+
+## 入力
+論文のPDFファイルまたはURL
+
+## 出力
+素人と専門家の対話形式で論文内容を解説してください。</code></pre>
+        </div>
+
+        <!-- スライド27: 対話形式解説の出力例 -->
+        <div class="slide">
+            <h1>対話形式で論文を解説した出力例</h1>
+            <div class="image-container">
+                <img src="img/dialogue-paper.png" alt="対話形式論文解説の出力例">
+            </div>
+        </div>
+
+        <!-- スライド28: レシート画像から、経費内訳作成 -->
         <div class="slide">
             <h1>レシート画像から、経費内訳作成</h1>
             <div class="image-container">
@@ -850,10 +942,10 @@ Markdown形式で以下の構造：
             </div>
         </div>
 
-        <!-- スライド25: プロンプト例（レシート） -->
+        <!-- スライド29: プロンプト例（レシート） -->
         <div class="slide">
             <h1>プロンプト例</h1>
-            <pre><code>あなたは経理担当者です。  
+            <pre><code>あなたは経理担当者です。
 私は経費精算のためにレシートから内訳を作成する担当者です。
 以下のレシート画像を確認し、経費内訳を作成してください。
 
@@ -881,7 +973,7 @@ Markdown形式で以下の構造：
 | 合計金額   |            | |              | 4000円 |</code></pre>
         </div>
 
-        <!-- スライド26: 出力例 -->
+        <!-- スライド30: 出力例 -->
         <div class="slide">
             <h1>出力例</h1>
             <div class="image-container">
@@ -889,7 +981,7 @@ Markdown形式で以下の構造：
             </div>
         </div>
 
-        <!-- スライド27: ChatGPT Thinking modeの活用 -->
+        <!-- スライド31: ChatGPT Thinking modeの活用 -->
         <div class="slide">
             <h1>ChatGPT Thinking modeの活用</h1>
             <h2><i class="fas fa-brain"></i> より深い分析と精度の高い回答を得る方法</h2>
